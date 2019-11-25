@@ -9,11 +9,12 @@ class TLCStudent(
                 val lName: String,
                 val ID: Int,
                 val role: String,
-                val url: String,
-              year: Int=Year.now.getValue
+                year: Int=Year.now.getValue,
+                val url: String ="https://github/turntabl"
+
                 ){
   printf(s"creating Student $fName $lName $ID $role $url")
-   def this(fName: String, lName: String) = this(fName,lName,ID,role,"https://github/turntabl")
+//   def this(fName: String, lName: String) = this(fName,lName,ID,role,"https://github/turntabl")
 
   override def toString = s"$fName, $lName"
 
@@ -25,7 +26,7 @@ class TLCStudent(
      def apply(fName: String,lName:String): TLCStudent = new TLCStudent(fName,lName,ID,role,"https://github/turntabl")
    }
 //   import io.turntabl.grades._
-  def toGrade()= Grade("Scala",89)
+  def topGrade()= Grade("Scala",89)
 
 
 }
