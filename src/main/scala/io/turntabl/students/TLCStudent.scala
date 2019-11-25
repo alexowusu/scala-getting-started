@@ -20,7 +20,7 @@ class TLCStudent(
   val currentYear:Int= Year.now.getValue
   def StudentsTermsService(year:Int)=currentYear-year
 
-  def isEqual(sts: TLCStudent) = sts.StudentsTermsService(year) eq StudentsTermsService(year)
+  def isEqual(sts: TLCStudent) = sts.StudentsTermsService(year) == StudentsTermsService(year)
    object TLCStudent{
      def apply(fName: String,lName:String): TLCStudent = new TLCStudent(fName,lName,ID,role,"https://github/turntabl")
    }
