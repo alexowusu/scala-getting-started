@@ -12,7 +12,7 @@ class TLCStudent(
                 year: Int=Year.now.getValue,
                 val url: String ="https://github/turntabl"
 
-                ){
+                ) extends TurntablEmployee {
   printf(s"creating Student $fName $lName $ID $role $url")
 //   def this(fName: String, lName: String) = this(fName,lName,ID,role,"https://github/turntabl")
 
@@ -23,12 +23,14 @@ class TLCStudent(
 
   def isEqual(sts: TLCStudent) = sts.StudentsTermsService(year) == StudentsTermsService(year)
    object TLCStudent{
-     def apply(fName: String,lName:String): TLCStudent = new TLCStudent(fName,lName,ID,role,"https://github/turntabl")
+     def apply(fName: String,lName:String): TLCStudent = new TLCStudent(fName,lName,ID,role)
    }
 //   import io.turntabl.grades._
   def topGrade()= Grade("Scala",89)
 
+  override val GetWorkload: String = "super hard"
 
+  override def StudentTermService: Int = currentYear-year
 }
 
 
